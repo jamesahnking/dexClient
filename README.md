@@ -1,14 +1,50 @@
 
 
-- 
+For migration of contracts to appclient 
+- Add pah const path = require('path'); - to truffle-config.js
 - Deploy the 5 contracts using the deploy_contract.js
 
+Migrate Your contracts using 
+- truffle develp
+- truffle migrate 
+
+Seed Trader Balances - though the deploy scrip
+
+Connect Front End To Smart Contract. with Web3
+migrations/deploy_contract.js
+ERC20Abi.json - https://ethereumdev.io/abi-for-erc20-contract-on-ethereum/
+
+Create Loading Container that loads web3 and tokens 
+replace that with App js in index.js so that web three loads at start
 
 
 
 
 
 
+
+
+
+How to solve current webpack error
+
+https://discord.com/channels/726924356311187496/726924602235682889/934917919178125333
+
+in client folder : 
+
+uninstall webpack, 
+delete node_modules, 
+delete package-lock.json, 
+set "react-scripts": "^4.0.3" and 
+
+
+Parsing error: Must use import to load ES Module: /Users/jamesahnking/Documents/solidity/001_experiments/002_dex/appclient/node_modules/eslint-scope/lib/index.js
+require() of ES modules is not supported.
+require() of /Users/jamesahnking/Documents/solidity/001_experiments/002_dex/appclient/node_modules/eslint-scope/lib/index.js from /Users/jamesahnking/Documents/solidity/001_experiments/002_dex/appclient/node_modules/babel-eslint/lib/require-from-eslint.js is an ES module file as it is a .js file whose nearest parent package.json contains "type": "module" which defines all .js files in that package scope as ES modules.
+Instead rename index.js to end in .cjs, change the requiring code to use import(), or remove "type": "module" from /Users/jamesahnking/Documents/solidity/001_experiments/002_dex/appclient/node_modules/eslint-scope/package.json.
+
+/Users/jamesahnking/Documents/solidity/001_experiments/002_dex/appclient/node_modules/eslint-scope
+
+changed index.js to index.cjs 
 
 # Getting Started with Create React App
 

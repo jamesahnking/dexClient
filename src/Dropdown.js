@@ -19,7 +19,7 @@ function Dropdown({onSelect, activeItem, items}) {
     return (
     <div className="dropdown ms-3">
         
-        // Dropdown Button 
+        {/* Dropdown Button  */} 
         <button className="btn btn-secondary dropdown-toggle" 
             type="button" 
             onClick={() => setDropdownVisible(!dropdownVisible)}>
@@ -27,14 +27,14 @@ function Dropdown({onSelect, activeItem, items}) {
             {activeItem.label}
         </button>
 
-        // Dropdown Menue 
+        {/* Dropdown Menue  */} 
         <div className={`dropdown-menue ${dropdownVisible ? 'visible' : ''}}`}>
             
-            // iterate through the dropdown items array if not defined
+                    {/* iterate through the dropdown items array if not defined */}
             {items && items.map((item, i) => (
                 <a
                     className={`dropdown-item ${item.value === activeItem.value ? 'active' : null}`}
-                    href='#'
+                    href='https://www.google.com'
                     key={i}
                     onClick={e => selectItem(e, item.value)}
                 >

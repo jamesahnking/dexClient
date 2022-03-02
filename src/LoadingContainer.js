@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import {getWeb3, getContracts } from './utils.js';
 import App from './App.js';
+// What is the LoadingContainer.js
+// Loads web 3 accounts and all contracts at applicaiton start
 
 function LoadingContainer() {
     const [web3, setWeb3] = useState(undefined);
@@ -35,7 +37,7 @@ function LoadingContainer() {
         return <div>Loading...</div>;
     }
 
-    // if it is ready return the props
+    // return props for us in App.js
     return (
         <App web3={web3} accounts={accounts} contracts={contracts}/>
         )
