@@ -5,13 +5,13 @@ import React, { useState } from 'react';
 // items: list of tokens
 
 function Dropdown({onSelect, activeItem, items}) {
+    
     // define state for expanding the dropdown
     const [dropdownVisible, setDropdownVisible] = useState(false);
 
-
     //define selected Item 
     const selectItem = (e, item) => {
-        e.preventDefault();
+        e.preventDefault(); // prevent from reloading hte page
         setDropdownVisible(!dropdownVisible);
         onSelect(item);
     }
@@ -30,7 +30,7 @@ function Dropdown({onSelect, activeItem, items}) {
         {/* Dropdown Menue  */} 
         <div className={`dropdown-menue ${dropdownVisible ? 'visible' : ''}}`}>
             
-                    {/* iterate through the dropdown items array if not defined */}
+            {/* iterate through the dropdown items array if not defined */}
             {items && items.map((item, i) => (
                 <a
                     className={`dropdown-item ${item.value === activeItem.value ? 'active' : null}`}

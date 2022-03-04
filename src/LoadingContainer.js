@@ -13,7 +13,7 @@ function LoadingContainer() {
     useEffect(() => {
         const init = async () => {
             const web3 = await getWeb3();
-            const contracts = await getContracts;
+            const contracts = await getContracts(web3);
             const accounts = await web3.eth.getAccounts();
           
             // save state
@@ -22,6 +22,7 @@ function LoadingContainer() {
             setAccounts(accounts);
         }
         init();
+        
     },[]);
 
     // guard check if component ready 

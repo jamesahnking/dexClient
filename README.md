@@ -17,34 +17,16 @@ ERC20Abi.json - https://ethereumdev.io/abi-for-erc20-contract-on-ethereum/
 Create Loading Container that loads web3 and tokens 
 replace that with App js in index.js so that web three loads at start
 
+- Does Login
+- Error after logoin blank screen
 
+Errors:
+X App.js:33 Uncaught TypeError: Cannot read properties of undefined (reading 'methods')
+X index.js:1 The above error occurred in the <App> component:
+X utils.js:26 Uncaught (in promise) TypeError: Cannot read properties of undefined (reading 'eth')
 
+- Uncaught (in promise) Error: This contract object doesn't have address set yet, please set an address first.
 
-
-
-
-
-
-How to solve current webpack error
-
-https://discord.com/channels/726924356311187496/726924602235682889/934917919178125333
-
-in client folder : 
-
-uninstall webpack, 
-delete node_modules, 
-delete package-lock.json, 
-set "react-scripts": "^4.0.3" and 
-
-
-Parsing error: Must use import to load ES Module: /Users/jamesahnking/Documents/solidity/001_experiments/002_dex/appclient/node_modules/eslint-scope/lib/index.js
-require() of ES modules is not supported.
-require() of /Users/jamesahnking/Documents/solidity/001_experiments/002_dex/appclient/node_modules/eslint-scope/lib/index.js from /Users/jamesahnking/Documents/solidity/001_experiments/002_dex/appclient/node_modules/babel-eslint/lib/require-from-eslint.js is an ES module file as it is a .js file whose nearest parent package.json contains "type": "module" which defines all .js files in that package scope as ES modules.
-Instead rename index.js to end in .cjs, change the requiring code to use import(), or remove "type": "module" from /Users/jamesahnking/Documents/solidity/001_experiments/002_dex/appclient/node_modules/eslint-scope/package.json.
-
-/Users/jamesahnking/Documents/solidity/001_experiments/002_dex/appclient/node_modules/eslint-scope
-
-changed index.js to index.cjs 
 
 # Getting Started with Create React App
 

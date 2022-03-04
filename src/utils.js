@@ -1,7 +1,7 @@
 import Web3 from 'web3';
-import MyDex from './contracts/MyDex.json';
-import ERC20Abi from './ERC20Abi.json';
 import detectEthereumProvider from '@metamask/detect-provider';
+import Dex from './contracts/Dex.json';
+import ERC20Abi from './ERC20Abi.json';
 
 // Connect to the ethereum network through web3
 const getWeb3 = () => 
@@ -20,13 +20,12 @@ const getWeb3 = () =>
   });
 
 
-
 // Bring in ABI so we can interact and do stuff   
 const getContracts = async web3 => {
   const networkId = await web3.eth.net.getId();
-  const deployedNetwork = MyDex.networks[networkId];
+  const deployedNetwork = Dex.networks[networkId];
   const dex = new web3.eth.Contract( // instantiate contract instance for the exchange
-    MyDex.abi,
+    Dex.abi,
     deployedNetwork && deployedNetwork.address,
     );
     // get instances of ERC20 tokens
@@ -41,6 +40,9 @@ const getContracts = async web3 => {
       [web3.utils.hexToUtf8(token.ticker)]: new web3.eth.Contract( ERC20Abi,token.tokenAddress)
     }), {});
     return { dex, ...tokenContracts}; // {dex,a, b}
+
+
+
 };
 // Instatiate ERC20 Tokens
 

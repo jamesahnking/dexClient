@@ -30,13 +30,14 @@ function App({web3, accounts, contracts}) { //props
     }
     init();
 
-    }, [accounts, contracts.dex.methods, web3.utils]);
+    }, [web3.utils, accounts, contracts.dex.methods]);
 
     // display loading screen wiht no token 
     if(typeof user.selectedToken === 'undefined') {
       return<div> Loading... </div>
     }
 
+    
   return (
     <div id="app">
       <Header 
