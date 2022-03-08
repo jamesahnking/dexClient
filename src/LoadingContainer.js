@@ -21,8 +21,7 @@ function LoadingContainer() {
             setContracts(contracts);
             setAccounts(accounts);
         }
-        init();
-        
+        init();        
     },[]);
 
     // guard check if component ready 

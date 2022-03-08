@@ -6,26 +6,24 @@ function Header({
 user,
 tokens, 
 contracts,
-selectToken
-}){
+selectToken}){
 return (
     <header id="header" className="card">
         <div className="row">
-            <div className="col-sm-3-flex">
-                {/* Dropdown goes here left col */}
-                <Dropdown items={tokens.map((token) => ({
-                    label: token.ticker,
-                    value: token
-                    }))}
-
-                activeItem={{
-                    label: user.selectedToken.ticker,
-                    value: user.selectedToken
-                }}
-
-                onSelect={selectToken}
-                />
-            </div>
+<div className="col-sm-3 flex">
+          <Dropdown 
+            className="ml-3"
+            items={tokens.map((token) => ({
+              label: token.ticker,
+              value: token
+            }))} 
+            activeItem={{
+              label: user.selectedToken.ticker,
+              value: user.selectedToken
+            }}
+            onSelect={selectToken}
+          />
+        </div>
             <div className="col-sm-9">
                 {/* Right col */}
             <h1 className="header-title">
