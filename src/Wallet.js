@@ -23,7 +23,7 @@ function Wallet({deposit, withdraw, user}) {
     }
 
   return (
-    <div className="wallet" className="card">
+    <div id="wallet" className="card">
         <h2 className="card-title">Wallet</h2>
         <h3>Token balance for {user.selectedToken.ticker} </h3>
         
