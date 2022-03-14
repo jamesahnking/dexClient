@@ -12,6 +12,7 @@ function Wallet({deposit, withdraw, user}) {
     const [direction, setDirection] = useState(DIRECTION.DEPOSIT);
     const [amount, setAmount] = useState(0);
     
+    // deposit or withdraw at submit
     const onSubmit = (e) => {
         e.preventDefault();
         if(direction === DIRECTION.DEPOSIT) {
