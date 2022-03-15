@@ -1,5 +1,6 @@
 import React from "react";
-// import Moment from "moment";
+import { formatDistance, subDays } from 'date-fns';
+
 
 function AllOrders({ orders }) {
   // render table for body
@@ -23,7 +24,8 @@ function AllOrders({ orders }) {
                 <td>{order.amount - order.filled}</td>
                 <td>{order.price}</td>
                 <td>
-                  {/* <Moment fromNow>{parseInt(order.date) * 1000}</Moment> */}
+                  {Intl.DateTimeFormat(navigator.language, {  month: 'short', day: 'numeric', hour:'numeric', minute:'numeric' }).format(new Date())}
+
                 </td>
               </tr>
             ))}
