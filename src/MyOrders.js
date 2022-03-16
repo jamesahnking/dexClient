@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react'
 
-function AllOrders({ orders }) {
-  // render table for body
-  const renderList = (orders, side, className) => {
-    return (
-      <>
-        <table className={`table table-striped mb-01 order-list ${className}`}>
+function MyOrders({ orders }) {
+   
+const renderList = (orders, side, className) => {
+return (
+    <>
+    <table className={`table table-striped mb-01 order-list ${className}`}>
           <thead>
             <tr className="table-title order-list-title">
               <th colSpan="3">{side}</th>
@@ -29,13 +29,13 @@ function AllOrders({ orders }) {
             ))}
           </tbody>
         </table>
-      </>
+    </> 
     );
-  };
+}
 
-  return (
+return (
     <div className="card">
-      <h2 className="card-title">All orders</h2>
+      <h2 className="card-title">My Order</h2>
       <div className="row">
         <div className="col-sm-6">
           {renderList(orders.buy, "Buy", "order-list-buy")}
@@ -45,7 +45,8 @@ function AllOrders({ orders }) {
         </div>
       </div>
     </div>
-  );
+  
+    )
 }
 
-export default AllOrders;
+export default MyOrders;
