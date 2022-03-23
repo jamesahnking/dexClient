@@ -1,4 +1,6 @@
 import React from "react";
+import Moment from 'react-moment';
+
 
 function AllOrders({ orders }) {
   // render table for body
@@ -22,7 +24,7 @@ function AllOrders({ orders }) {
                 <td>{order.amount - order.filled}</td>
                 <td>{order.price}</td>
                 <td>
-                  {Intl.DateTimeFormat(navigator.language, {  month: 'short', day: 'numeric', hour:'numeric', minute:'numeric' }).format(new Date())}
+                <Moment fromNow>{parseInt(order.date) * 1000}</Moment>
 
                 </td>
               </tr>
@@ -35,7 +37,7 @@ function AllOrders({ orders }) {
 
   return (
     <div className="card">
-      <h2 className="card-title">All orders</h2>
+      <h2 className="card-title">All Orders</h2>
       <div className="row">
         <div className="col-sm-6">
           {renderList(orders.buy, "Buy", "order-list-buy")}

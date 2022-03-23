@@ -5,6 +5,7 @@ import Wallet from "./Wallet";
 import NewOrder from "./NewOrder";
 import AllOrders from "./AllOrders";
 import MyOrders from "./MyOrders";
+import AllTrades from "./AllTrades";
 
 // Trade Side
 const SIDE = {
@@ -30,6 +31,9 @@ function App({ web3, accounts, contracts }) {
     sell: [],
   });
 
+  const [trades, setTrades] = useState([]);
+  const [listener, setListener] = useState(undefined);
+
   // Get Balances Dex / Wallet
   const getBalances = async (account, token) => {
     const tokenDex = await contracts.dex.methods
@@ -54,8 +58,32 @@ function App({ web3, accounts, contracts }) {
     return { buy: orders[0], sell: orders[1] };
   };
 
+  // changed when user switches tokens 
   const selectToken = (token) => {
     setUser({ ...user, selectedToken: token });
+  };
+
+  // WebSocket Listener for Trades
+  const listenToTrades = (token) => {
+    // ticker from trade
+    // Trade Set
+    const tradeIds = new Set();
+    setTrades([]);
+
+    const listener = contracts.dex.events
+      .NewTrade(
+        // filter by ticker of trade
+        {
+          filter: { ticker: web3.utils.fromAscii(token.ticker) },
+          fromBlock: 0,
+        }
+      )
+      .on("data", (newTrade) => {
+        if (tradeIds.has(newTrade.returnValues.tradId)) return;
+        tradeIds.add(newTrade.returnValues.tradeId);
+        setTrades((trades) => [...trades, newTrade.returnValues]);
+      });
+    setListener(listener);
   };
 
   // Deposit funds int
@@ -120,6 +148,8 @@ function App({ web3, accounts, contracts }) {
 
       const balances = await getBalances(accounts[0], tokens[0]);
       const orders = await getOrders(tokens[0]);
+
+      listenToTrades(tokens[0]);
       setTokens(tokens); // save token to state
       setUser({ accounts, balances, selectedToken: tokens[0] });
       setOrders(orders);
@@ -134,6 +164,8 @@ function App({ web3, accounts, contracts }) {
         getBalances(user.accounts[0], user.selectedToken),
         getOrders(user.selectedToken),
       ]);
+      
+      listenToTrades(user.selectedToken);
       setUser((user) => ({ ...user, balances }));
       setOrders(orders);
     };
@@ -167,22 +199,26 @@ function App({ web3, accounts, contracts }) {
             ) : null}
           </div>
           {user.selectedToken.ticker !== "DAI" ? (
-          <div className="col-sm-8">
-            <AllOrders orders={orders} />
-            <MyOrders 
-            orders={{
-              buy: orders.buy.filter(
-                 order => order.trader.toLowerCase() === accounts[0].toLowerCase()
-                 ),
-              sell: orders.sell.filter(
-                order => order.trader.toLowerCase() === accounts[0].toLowerCase()
-              )
-            }}
-          />
-          </div>
+            <div className="col-sm-8">
+
+              <AllTrades trades={trades} />
+            
+              <AllOrders orders={orders} />
+
+              <MyOrders
+                orders={{
+                  buy: orders.buy.filter(
+                    (order) =>
+                      order.trader.toLowerCase() === accounts[0].toLowerCase()
+                  ),
+                  sell: orders.sell.filter(
+                    (order) =>
+                      order.trader.toLowerCase() === accounts[0].toLowerCase()
+                  ),
+                }}
+              />
+            </div>
           ) : null}
-
-
         </div>
       </main>
       <Footer />

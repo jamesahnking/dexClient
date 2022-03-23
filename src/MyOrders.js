@@ -1,4 +1,5 @@
 import React from 'react'
+import Moment from 'react-moment';
 
 function MyOrders({ orders }) {
    
@@ -11,7 +12,7 @@ return (
               <th colSpan="3">{side}</th>
             </tr>
             <tr>
-              <th>Amount</th>
+              <th>Amount/Filled</th>
               <th>Price</th>
               <th>date</th>
             </tr>
@@ -22,7 +23,7 @@ return (
                 <td>{order.amount - order.filled}</td>
                 <td>{order.price}</td>
                 <td>
-                  {Intl.DateTimeFormat(navigator.language, {  month: 'short', day: 'numeric', hour:'numeric', minute:'numeric' }).format(new Date())}
+                <Moment fromNow>{parseInt(order.date) * 1000}</Moment>
 
                 </td>
               </tr>
