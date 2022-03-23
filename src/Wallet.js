@@ -12,6 +12,7 @@ function Wallet({deposit, withdraw, user}) {
     const [direction, setDirection] = useState(DIRECTION.DEPOSIT);
     const [amount, setAmount] = useState(0);
     
+    // deposit or withdraw at submit
     const onSubmit = (e) => {
         e.preventDefault();
         if(direction === DIRECTION.DEPOSIT) {
@@ -22,7 +23,7 @@ function Wallet({deposit, withdraw, user}) {
     }
 
   return (
-    <div className="wallet" className="card">
+    <div id="wallet" className="card">
         <h2 className="card-title">Wallet</h2>
         <h3>Token balance for {user.selectedToken.ticker} </h3>
         
