@@ -1,3 +1,3 @@
-# Fronted App For Crytpo Dex Contracts.
+# Fronted Application for jamesahnking/dex .
 
 
