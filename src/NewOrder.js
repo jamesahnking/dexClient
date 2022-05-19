@@ -110,7 +110,7 @@ const onSubmit = (e) => {
 
                 {/* Submit Button */}
                 <div className="text-right">
-                    <button type="submit" className="btn btn-primary">Submit</button>
+                    <button type="submit" className="btn btn-primary">Submit New Order</button>
                 </div>
             </form>
         {/* Main Card End*/}

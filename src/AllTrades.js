@@ -32,7 +32,7 @@ const renderList = (trades, className) => {
 }
 const renderChart = (trades) => {
     return (
-        <ResponsiveContainer width="100%" height={200}>
+        <ResponsiveContainer width="100%" height={400}>
         <LineChart data={trades}>
           <Line type="monotone" dataKey="price" stroke="#741cd7" />
           <CartesianGrid strokeDasharray="3 3" />

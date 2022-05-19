@@ -11,12 +11,14 @@
       }
       th {
         border: none;
-        padding: 0.5em
+        
       }
     }
     td {
-      border-top: none;
-      padding: 0.25em 0.5em;
+       border-top: none;
+      
+       padding: 1em;
+       // padding: 0.25em 0.5em;
     }
     &.table-striped {
       tr:nth-of-type(odd) {
@@ -28,10 +30,14 @@
   .btn-group {
     width: 100%;
     display: flex;
+    // padding-top: 1em;
+    padding-bottom: 1em;
     .btn {
       flex: 1;
       border: 2px solid $purple !important;
       background-color: $purple;
+      padding-top: 1em;
+      padding-bottom: 1em;
       &.active {
         background-color: $lightPurple !important;
       }
@@ -43,8 +49,11 @@
   
   .btn-primary {
     color: $white;
+    width: 100%;
     background-color: $lightPurple;
     border-color: $lightPurple;
+    padding: 1em;
+    
     &:hover {
       background-color: $purple;
       border-color: $lightPurple;
@@ -52,9 +61,13 @@
   }
   
   .form-control {
+    
     background-color: rgb(40,40,40);
     color: white;
     border: none;
+    padding: 1em;
+    // padding-bottom: 1em;
+    margin-bottom: 1em;
     &:focus {
       background-color: rgb(40,40,40);
       color: white;
@@ -68,9 +81,11 @@
   }
   
   .input-group-append {
+    
     .input-group-text {
-      background-color: $black;
-      border: 1px solid rgb(40,40,40);
+      background-color: $dimBlack;
+      border: none;
+      padding: 1em;
       color: white;
     }
   }

@@ -10,7 +10,9 @@ selectToken}){
 return (
     <header id="header" className="card">
         <div className="row">
-<div className="col-sm-3 flex">
+          
+          <div className="col-sm-3 flex">
+          <div className="header-title" >SELECT TOKEN </div>
           <Dropdown 
             className="ml-3"
             items={tokens.map((token) => ({

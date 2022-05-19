@@ -191,6 +191,7 @@ function App({ web3, accounts, contracts }) {
         <div className="row">
           <div className="col-sm-4 first col">
             <Wallet user={user} deposit={deposit} withdraw={withdraw} />
+            { /* If the token selected is NOT Dai show the New Order component */}
             {user.selectedToken.ticker !== "DAI" ? (
               <NewOrder
                 createLimitOrder={createLimitOrder}
@@ -198,6 +199,7 @@ function App({ web3, accounts, contracts }) {
               />
             ) : null}
           </div>
+          { /* If the token selected is NOT Dai show the All Trades and All Orders Components */ }
           {user.selectedToken.ticker !== "DAI" ? (
             <div className="col-sm-8">
 

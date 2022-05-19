@@ -24,7 +24,7 @@ function Wallet({deposit, withdraw, user}) {
 
   return (
     <div id="wallet" className="card">
-        <h2 className="card-title">Wallet</h2>
+        <h2 className="card-title">DEX Wallet</h2>
         <h3>Token balance for {user.selectedToken.ticker} </h3>
         
         {/* Wallet Balance */}
@@ -93,8 +93,8 @@ function Wallet({deposit, withdraw, user}) {
              </div>
         </div>    
     </div>
-        <div className="text-right">
-            <button type="submit" className="btn btn-primary">Submit</button>
+        <div className="text-start">
+            <button type="submit" className="btn btn-primary rounded">Submit Transaction</button>
         </div>
      </form>
     </div>
