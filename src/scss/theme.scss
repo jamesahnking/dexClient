@@ -30,16 +30,15 @@
   .btn-group {
     width: 100%;
     display: flex;
-    // padding-top: 1em;
-    padding-bottom: 1em;
     .btn {
       flex: 1;
-      border: 2px solid $purple !important;
-      background-color: $purple;
+      border: 2px solid $darkBlue !important;
+      background-color: $darkBlue;
       padding-top: 1em;
       padding-bottom: 1em;
+      margin-bottom: 1em;
       &.active {
-        background-color: $lightPurple !important;
+        background-color: $blue !important;
       }
       &:focus {
         box-shadow: none !important;
@@ -50,13 +49,13 @@
   .btn-primary {
     color: $white;
     width: 100%;
-    background-color: $lightPurple;
-    border-color: $lightPurple;
+    background-color: $blue;
+    border-color: $blue;
     padding: 1em;
     
     &:hover {
-      background-color: $purple;
-      border-color: $lightPurple;
+      background-color: $blue;
+      border-color: $darkBlue;
     }
   }
   
@@ -66,7 +65,6 @@
     color: white;
     border: none;
     padding: 1em;
-    // padding-bottom: 1em;
     margin-bottom: 1em;
     &:focus {
       background-color: rgb(40,40,40);

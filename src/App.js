@@ -6,6 +6,7 @@ import NewOrder from "./NewOrder";
 import AllOrders from "./AllOrders";
 import MyOrders from "./MyOrders";
 import AllTrades from "./AllTrades";
+import WelcomeDash from "./WelcomeDash";
 
 // Trade Side
 const SIDE = {
@@ -204,7 +205,6 @@ function App({ web3, accounts, contracts }) {
             <div className="col-sm-8">
 
               <AllTrades trades={trades} />
-            
               <AllOrders orders={orders} />
 
               <MyOrders
@@ -220,7 +220,11 @@ function App({ web3, accounts, contracts }) {
                 }}
               />
             </div>
-          ) : null}
+          ) : 
+          <div className="col-sm-8">
+               <WelcomeDash/>
+          </div>
+          }
         </div>
       </main>
       <Footer />

@@ -1,6 +1,6 @@
 #header {
 
-  background-color: $navyBlue;
+  background-color: $black;
 
     .header-title {
       font-family: 'Montserrat', sans-serif;
@@ -10,6 +10,25 @@
       font-size: 1rem;
       line-height: 38px;
     }
+
+    .dropdown-title {
+      padding-right: 20px;
+    }    
+
+    .dex-logotype {
+      height:30px;
+      margin-bottom: 5px;
+    }
+
+    .dex-logotype-cntr {
+      justify-content: center;
+      text-align: center;
+    }
+
+    .dex-logotype-cntr p{
+      font-size: 0.8rem;
+    }
+
     .contract-address {
       color: $dimWhite; 
       font-size: 0.8rem; 
