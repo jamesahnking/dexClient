@@ -34,7 +34,7 @@ return (
                   Dex - <span className='contract-address'>Contract Address: <span className="address">{contracts.dex.options.address}</span></span>
               </h1>
               <h1 className="header-title">
-                  You - <span className='contract-address'>Contract Address: <span className="address">{contracts.dex.options.address}</span></span>
+                  You - <span className='contract-address'>User Address: <span className="address">{user.accounts[0]}</span></span>
               </h1>
             </div>
             <div className="col-sm-3 dex-logotype-cntr ">
