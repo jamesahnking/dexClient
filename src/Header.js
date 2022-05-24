@@ -13,7 +13,7 @@ return (
     <header id="header" className="card">
         <div className="row"> 
 
-          <div className="col-sm-3 flex">
+          <div className="col-sm-3 flex ">
            <div className="header-title dropdown-title">SELECT A TOKEN</div>
           <Dropdown 
             className="ml-3"
@@ -31,10 +31,10 @@ return (
             <div className="col-sm-6">
                 {/* Right col */}
               <h1 className="header-title">
-                  Dex - <span className='contract-address'>Contract Address: <span className="address">{contracts.dex.options.address}</span></span>
+                  Dex Address- <span className='contract-address'><span className="address">{contracts.dex.options.address}</span></span>
               </h1>
               <h1 className="header-title">
-                  You - <span className='contract-address'>User Address: <span className="address">{user.accounts[0]}</span></span>
+                  My Address- <span className='contract-address'><span className="address">{user.accounts[0]}</span></span>
               </h1>
             </div>
             <div className="col-sm-3 dex-logotype-cntr ">

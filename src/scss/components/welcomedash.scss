@@ -1,0 +1,27 @@
+#dash {
+    display:flex;
+    height: auto;
+    padding: 40px;
+    
+    .card-content {
+     display: flex;
+     height: 100%;
+
+    }
+
+    .text-content {
+        justify-content: center;
+    }
+
+    .logo-scale {
+        // background-color:red;
+        width: 400px;
+        height: 400px;
+
+    }
+
+    .dex-logotype-cntr {
+        
+      }
+
+}

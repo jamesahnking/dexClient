@@ -8,16 +8,11 @@ const Footer = () => {
       
       <div className="col-sm-3 dex-logotype-cntr">
           <Adexlogo className='dex-logotype'/>
-               <p className="header-title ">
-                  A DECENTRALIZED EXCHANAGE
-              </p>
-      </div>
-
-      <div className="col-sm-3 flex">
         
       </div>
 
-      <div className="col-sm-6 flex">
+
+      <div className="col-sm-9 flex">
  
       </div>
 

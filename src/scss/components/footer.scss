@@ -1,6 +1,11 @@
 #footer {
-
-    background-color: $black;
+  position:fixed;
+  bottom: 0;
+  width:100%;
+  background-color: $black;
+  z-index: 99;
+  opacity: 0.9;
+  
 
     .dex-logotype {
         height:30px;

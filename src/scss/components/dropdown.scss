@@ -1,4 +1,5 @@
 .dropdown { 
+
     .dropdown-toggle {
       background-color: black;
       border: 1px solid rgb(40,40,40);
@@ -15,11 +16,11 @@
         color: white;
       }
      .dropdown-item.active {
-        background-color: #731DD8; 
+        background-color: $darkCerulean; 
         color: white;
       }
       .dropdown-item:hover{
-        background-color: #441282;
+        background-color: $navyBlue;
         color: white;
       }
     }
