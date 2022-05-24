@@ -227,7 +227,7 @@ function App({ web3, accounts, contracts }) {
           }
         </div>
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

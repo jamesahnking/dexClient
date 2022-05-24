@@ -10,7 +10,7 @@ tokens,
 contracts,
 selectToken}){
 return (
-    <header id="header" className="card">
+    <header id="header" >
         <div className="row"> 
 
           <div className="col-sm-3 flex ">
