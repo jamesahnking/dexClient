@@ -1,8 +1,10 @@
 #dash {
     display:flex;
     height: auto;
-    padding: 20px;
+    padding: 40px;
     height: 100%;
+    align-items: center;
+    justify-content: center;
     
     .card-content {
      display: flex;
@@ -11,14 +13,21 @@
     }
 
     .text-content {
-        justify-content: center;
+        
+
+
     }
 
+    hr.style1{
+        border-top: 2px solid $lightBlue;
+    }
+    
     .logo-scale {
         // background-color:red;
-        width: 400px;
-        height: 400px;
-
+        width: 300px;
+        height: 300px;
+        margin-bottom: 20px;
+        
     }
 
     .dex-logotype-cntr {
