@@ -12,7 +12,7 @@ return (
               <th colSpan="3">{side}</th>
             </tr>
             <tr>
-              <th>Amount/Filled</th>
+              <th>Amount / Filled</th>
               <th>Price</th>
               <th>date</th>
             </tr>
@@ -20,7 +20,7 @@ return (
           <tbody>
             {orders.map((order) => (
               <tr key={order.id}>
-                <td>{order.amount - order.filled}</td>
+                <td>{order.amount} / {order.filled}</td>
                 <td>{order.price}</td>
                 <td>
                 <Moment fromNow>{parseInt(order.date) * 1000}</Moment>

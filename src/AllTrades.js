@@ -11,7 +11,7 @@ const renderList = (trades, className) => {
           <tr>
               <th>Amount</th>
               <th>Price</th>
-              <th>date</th>
+              <th>Date</th>
             </tr>
           </thead>
           <tbody>
@@ -34,7 +34,7 @@ const renderChart = (trades) => {
     return (
         <ResponsiveContainer width="100%" height={400}>
         <LineChart data={trades}>
-          <Line type="monotone" dataKey="price" stroke="#0077b6" />
+          <Line type="monotone" dataKey="price" stroke="#76E9FF" />
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="date" tickFormatter={dateStr => {
             const date = new Date(parseInt(dateStr) * 1000); 

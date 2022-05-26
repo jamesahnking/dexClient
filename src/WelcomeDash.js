@@ -22,7 +22,6 @@ const WelcomeDash = () => {
                     <li>This DEX uses a conventional exchange order book. </li>
                     <li>A user can create one of four types of orders. A Market Buy Order, Market Sell Order, Limit Buy Order, and a Limit Sell order. </li>
                     <li>Select one of the three token options, ADA, SMT, or BAT from the dropdown to trade.</li>
-                    <li>Since DAI is our trade currency</li>
                   </ol>
               </div>
             </div>

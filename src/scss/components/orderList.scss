@@ -1,12 +1,12 @@
 .order-list {
     &.order-list-buy {
       .order-list-title {
-        background-color: $lightOrange !important;
+        background-color: $lightPurple!important;
       }
     }
     &.order-list-sell {
       .order-list-title {
-        background-color: $darkOrange !important;
+        background-color: $darkPurple !important;
       }
     }
     color: $white;
